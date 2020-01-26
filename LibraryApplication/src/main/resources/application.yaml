@@ -1,0 +1,24 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: library-app
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000
+  cache:
+    type: REDIS
+    redis:
+      cache-null-values: false
+      use-key-prefix: true
+      key-prefix: library
+      time-to-live: 60000
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/green?useSSL=false
+    username: root
+    password: tiger
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
